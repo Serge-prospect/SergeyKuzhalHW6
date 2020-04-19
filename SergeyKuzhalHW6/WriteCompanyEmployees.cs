@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace SergeyKuzhalHW6
 {
+    /* Display company name and employees.
+     * Use employee class, company class.
+     * Use methods.*/
+
     class WriteCompanyEmployees
     {
         static void Main(string[] args)
