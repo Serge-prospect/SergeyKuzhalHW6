@@ -4,44 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhalHW6
+namespace SergeyKuzhalHW7
 {
     class Company
     {
-        public string companyName;
-        public Employee companyEmployees;
-        public Company(string companyNameValue, Employee employeeValues)
+        public string CompanyName { get; private set; }
+        public Employee[] CompanyEmployees { get; private set; }
+        public Office CompanyOffice { get; private set; }
+
+        public Company(string companyName, Employee[] companyEmployees, Office companyOffice)
         {
-            companyName = companyNameValue;
-            companyEmployees = employeeValues;
+            CompanyName = companyName;
+            CompanyEmployees = companyEmployees;
+            CompanyOffice = companyOffice;
         }
         
-
-        // Return company name
-        public static string GetCompanyName()
+        public string GetCompanyInfo()
         {
-            string companyNameValue = "Boston Dynamics";
-            return companyNameValue;
-        }
-        
+            string companyInfo = CompanyName + "\n\n"
+                               + "Office addres:\n"
+                               + CompanyOffice.Address + "\n\n"
+                               + "Total office room square: " + CompanyOffice.GetOfficeRoomsSquare().ToString() + " sq. m\n\n";
 
-        // Return list of employees
-        public static Employee[] GetCompanyEmployees()
-        {
-            Employee[] employeeValues = new Employee[10];
+            foreach (Employee employee in CompanyEmployees)
+            {
+                companyInfo += employee.GetEmployeeInfo();
+            }
 
-            employeeValues[0] = new Employee("Ben", "Gun", 21);
-            employeeValues[1] = new Employee("John", "Connor", 22);
-            employeeValues[2] = new Employee("Sarah", "Connor", 23);
-            employeeValues[3] = new Employee("Jon", "Snow", 24);
-            employeeValues[4] = new Employee("Luke", "Skywalker", 25);
-            employeeValues[5] = new Employee("Forrest", "Gump", 26);
-            employeeValues[6] = new Employee("Darth", "Vader", 27);
-            employeeValues[7] = new Employee("Richard", "Doe", 28);
-            employeeValues[8] = new Employee("John", "Doe", 29);
-            employeeValues[9] = new Employee("Jane", "Doe", 30);
-
-            return employeeValues;
+            return companyInfo;
         }
     }
 }

@@ -4,19 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhalHW6
+namespace SergeyKuzhalHW7
 {
     class Employee
     {
-        public string firstName;
-        public string lastName;
-        public int age;
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public int Age { get; private set; }
+        public int Room { get; private set; }
 
-        public Employee(string firstNameValue, string lastNameValue, int ageValue)
+        public Employee(string firstName, string lastName, int age, int room)
         {
-            firstName = firstNameValue;
-            lastName = lastNameValue;
-            age = ageValue;
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            Room = room;
+        }
+
+        public string GetEmployeeInfo()
+        {
+            string employeeInfo = "Full name: " + FirstName + " " + LastName + ", Age: " + Age.ToString() + ", " + "Room: " + Room.ToString() + "\n";
+
+            return employeeInfo;
         }
     }
 }
