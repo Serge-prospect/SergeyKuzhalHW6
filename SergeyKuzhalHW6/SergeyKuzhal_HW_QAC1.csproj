@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BA.cs" />
+    <Compile Include="Profession.cs" />
+    <Compile Include="Dev.cs" />
+    <Compile Include="DevOps.cs" />
+    <Compile Include="QA.cs" />
     <Compile Include="Office.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Company.cs" />

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhalHW7
+namespace SergeyKuzhal_HW_QAC1
 {
     class Employee
     {
@@ -21,9 +21,9 @@ namespace SergeyKuzhalHW7
             Room = room;
         }
 
-        public string GetEmployeeInfo()
+        public virtual string GetEmployeeInfo()
         {
-            string employeeInfo = "Full name: " + FirstName + " " + LastName + ", Age: " + Age.ToString() + ", " + "Room: " + Room.ToString() + "\n";
+            string employeeInfo = "Full name: " + FirstName + " " + LastName + ", Age: " + Age.ToString() + ", " + "Room: " + Room.ToString();
 
             return employeeInfo;
         }

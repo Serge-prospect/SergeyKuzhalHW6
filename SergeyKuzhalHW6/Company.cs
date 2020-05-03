@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhalHW7
+namespace SergeyKuzhal_HW_QAC1
 {
     class Company
     {
@@ -28,7 +28,7 @@ namespace SergeyKuzhalHW7
 
             foreach (Employee employee in CompanyEmployees)
             {
-                companyInfo += employee.GetEmployeeInfo();
+                companyInfo += employee.GetEmployeeInfo() + "\n";
             }
 
             return companyInfo;
