@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhal_HW_QAC1
+namespace SergeyKuzhal_HW_QAC2
 {
     class Company
     {
         public string CompanyName { get; private set; }
-        public Employee[] CompanyEmployees { get; private set; }
+        public List<Employee> CompanyEmployees { get; private set; }
         public Office CompanyOffice { get; private set; }
 
-        public Company(string companyName, Employee[] companyEmployees, Office companyOffice)
+        public Company(string companyName, List<Employee> companyEmployees, Office companyOffice)
         {
             CompanyName = companyName;
             CompanyEmployees = companyEmployees;

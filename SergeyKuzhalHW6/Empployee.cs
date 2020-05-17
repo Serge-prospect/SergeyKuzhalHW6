@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhal_HW_QAC1
+namespace SergeyKuzhal_HW_QAC2
 {
-    class Employee
+    abstract class Employee
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
