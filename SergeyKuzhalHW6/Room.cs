@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhal_HW_QAC2
+namespace SergeyKuzhal_HW_QAC3
 {
     class Room
     {

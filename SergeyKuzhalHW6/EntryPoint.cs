@@ -1,10 +1,11 @@
-﻿using System;
+﻿using SergeyKuzhal_HW_QAC3.EmployeeTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhal_HW_QAC2
+namespace SergeyKuzhal_HW_QAC3
 {
     class EntryPoint
     {
@@ -29,7 +30,11 @@ namespace SergeyKuzhal_HW_QAC2
             professions.Add(new Profession("DevOps", "OPS"));
             professions.Add(new Profession("BA", "Requirements"));
             professions.Add(new Profession("BA", "Functional"));
-            
+            professions.Add(new Profession("QA", "Lead"));
+            professions.Add(new Profession("QA", "Automation Lead"));
+            professions.Add(new Profession("Dev", "Lead"));
+            professions.Add(new Profession("PM", "Lead"));
+
             // Set company employees
             List<Employee> companyEmployees = new List<Employee>();
             companyEmployees.Add(new QA("Ben", "Gun", 21, rooms[0].RoomNumber, professions[0]));
@@ -42,6 +47,12 @@ namespace SergeyKuzhal_HW_QAC2
             companyEmployees.Add(new Dev("Richard", "Doe", 28, rooms[5].RoomNumber, professions[0]));
             companyEmployees.Add(new DevOps("John", "Doe", 29, rooms[5].RoomNumber, professions[0]));
             companyEmployees.Add(new BA("Jane", "Doe", 30, rooms[5].RoomNumber, professions[6]));
+            companyEmployees.Add(new QALead("Jordge", "Doe", 41, rooms[0].RoomNumber, professions[8]));
+            companyEmployees.Add(new QAAutomation("Jannet", "Doe", 31, rooms[0].RoomNumber, professions[1]));
+            companyEmployees.Add(new QAAutomationLead("William", "Doe", 42, rooms[0].RoomNumber, professions[9]));
+            companyEmployees.Add(new DevLead("Bernard", "Doe", 43, rooms[1].RoomNumber, professions[10]));
+            companyEmployees.Add(new PM("Kate", "Doe", 44, rooms[5].RoomNumber, professions[11]));
+
 
             // Set office
             string officeAddress = "78 Fourth Avenue\n"
@@ -56,6 +67,36 @@ namespace SergeyKuzhal_HW_QAC2
 
             // Get full info about company
             Console.WriteLine(company.GetCompanyInfo());
+
+            // Get all code writers
+            Console.WriteLine("\nCan write code among them:");
+            foreach (Employee employee in companyEmployees)
+            {
+                if (employee is IDeveloper)
+                {
+                    Console.WriteLine(employee.GetEmployeeInfo());
+                }
+            }
+
+            // Get all testers
+            Console.WriteLine("\nCan test among them:");
+            foreach (Employee employee in companyEmployees)
+            {
+                if (employee is ITester)
+                {
+                    Console.WriteLine(employee.GetEmployeeInfo());
+                }
+            }
+
+            // Get all testers
+            Console.WriteLine("\nCan assign tasks among them:");
+            foreach (Employee employee in companyEmployees)
+            {
+                if (employee is ITaskAssigner)
+                {
+                    Console.WriteLine(employee.GetEmployeeInfo());
+                }
+            }
         }
     }
 }

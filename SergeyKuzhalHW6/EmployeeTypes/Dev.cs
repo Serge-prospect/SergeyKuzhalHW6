@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SergeyKuzhal_HW_QAC2
+namespace SergeyKuzhal_HW_QAC3.EmployeeTypes
 {
-    class Dev : Employee
+    class Dev : Employee, IDeveloper
     {
         public Profession Profession { get; private set; }
         public Dev (string firstName, string lastName, int age, int room, Profession profession) : base(firstName, lastName, age, room)
@@ -15,16 +15,33 @@ namespace SergeyKuzhal_HW_QAC2
         }
         public override string GetEmployeeInfo()
         {
-            if (Profession.ProfessionName == "Dev")
+            string checkProfession = "Dev";
+            if (Profession.ProfessionName == checkProfession)
             {
                 string employeeInfo = base.GetEmployeeInfo() + ", " + "Profession: " + Profession.ProfessionName + " - " + Profession.Specialization;
                 return employeeInfo;
             }
             else
             {
-                string employeeInfo = $"Error!--- Employee's profession mismatches for: \"Dev\" {FirstName} {LastName}.";
+                string employeeInfo = $"Error!--- Employee's profession mismatches for: \"{checkProfession}\" {FirstName} {LastName}.";
                 return employeeInfo;
             }
+        }
+
+        // IDeveloper methods
+        public void WriteCode()
+        {
+            Console.WriteLine("Write code");
+        }
+
+        public void FixBug()
+        {
+            Console.WriteLine("Fix a bug");
+        }
+
+        public void MaskBug()
+        {
+            Console.WriteLine("Mask a bug");
         }
     }
 }

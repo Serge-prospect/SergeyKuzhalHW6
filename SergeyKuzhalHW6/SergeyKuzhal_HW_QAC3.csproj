@@ -43,11 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BA.cs" />
+    <Compile Include="EmployeeTypes\BA.cs" />
+    <Compile Include="EmployeeTypes\DevLead.cs" />
+    <Compile Include="EmployeeTypes\PM.cs" />
+    <Compile Include="EmployeeTypes\QAAutomation.cs" />
+    <Compile Include="EmployeeTypes\QAAutomationLead.cs" />
+    <Compile Include="EmployeeTypes\QALead.cs" />
+    <Compile Include="IDeveloper.cs" />
+    <Compile Include="IManager.cs" />
+    <Compile Include="ITaskAssigner.cs" />
+    <Compile Include="ITester.cs" />
     <Compile Include="Profession.cs" />
-    <Compile Include="Dev.cs" />
-    <Compile Include="DevOps.cs" />
-    <Compile Include="QA.cs" />
+    <Compile Include="EmployeeTypes\Dev.cs" />
+    <Compile Include="EmployeeTypes\DevOps.cs" />
+    <Compile Include="EmployeeTypes\QA.cs" />
     <Compile Include="Office.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Company.cs" />
